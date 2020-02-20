@@ -3,7 +3,7 @@ p1{
     font-family: Arial, Helvetica, sans-serif;
 }
 .canvas_cont{
-    position: relative;
+    position: absolute;
     text-align: center;
 }
 canvas{
