@@ -1,15 +1,18 @@
-h1{
-    color:black;
+.glava{
     font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 30px;
 }
 .canvas_cont{
-    text-align: center;
+ position: relative;  
 }
 canvas{ 
-    height: 500px;
-    width: 500px; 
     border: 1px;
     border-style: solid;
-    border-color: blue;
-   
+    border-color: red;
+    position: absolute;
+    margin:auto;
 }

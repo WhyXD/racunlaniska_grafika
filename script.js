@@ -1,23 +1,32 @@
 function zacetek(){
 var canvas=document.getElementById("myCanvas");
 var gl=canvas.getContext("webgl");
-if(!gl){
-    
+var dosegljivost=document.getElementById("dela");
+
+if(!gl){ 
     var gl=canvas.getContext("experimental-webgl");
 }
 if(!gl){
     alert("Brskalnik ne podpira webgl");
+}else{
+    dosegljivost.innerText="Lahko boste igrali igro";
 }
 
-gl.clearColor(0.5,0.5,0.8,1.0);
+gl.clearColor(0.2,0.3,0.4,1.0);
 gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPH_BUFFER_BIT);
+
+/*Full screen canvas*/
+canvas.style.width=window.innerWidth + "px";
+canvas.style.height=window.innerHeight + "px";
 };
+
 function vertexShader(vertPosition,vertColor){
     return {
         fragColor:vertColor,
         gl_Position:[vertPosition.x,vertPosition.y, 0.0,1.0]
     };
 };
+
 /*
 var linije=[
     1,0,0,
