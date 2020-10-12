@@ -16,7 +16,8 @@ V JavaScriptu implementirajte razred Vector4f, ki naj hrani koordinate 3D prosto
 Razred naj opozarja na morebitne nekonsistence pri operacijah.
 
 Matrix4f (1 točka)
-V JavaScriptu implementirajte razred Matrix4f, ki naj hrani vrednosti 4x4 matrike v lastni spremenljivki spremenljivki. Razred naj omogoča hranjenje matrik s float vrednostmi in vsebuje naslednje statične metode za:
+V JavaScriptu implementirajte razred Matrix4f, ki naj hrani vrednosti 4x4 matrike v lastni spremenljivki spremenljivki. 
+Razred naj omogoča hranjenje matrik s float vrednostmi in vsebuje naslednje statične metode za:
 
 <Matrix4f> out negate(<Matrix4f> input), metoda naj vrne novo matriko, ki predstavlja negirano vhodno matriko,
 <Matrix4f> out add(<Matrix4f> input1, <Matrix4f> input2), metoda naj vrne novo matriko, ki predstavlja vsoto vhodnih matirk,
