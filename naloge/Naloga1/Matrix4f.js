@@ -4,14 +4,91 @@ class Matrix4f{
         }
 negacija(m1) {
     var matrika1 = new Matrix4f([[],[],[],[]]);
-    
+    var je=this.aliJeStevilo(m1);
     for(var i = 0; i <m1.matrika.length; i++) {
-     for(var j = 0; j < m1.matrika[i].length; j++) {
-        matrika1.matrika[i][j] = m1.matrika[i][j] * (-1);
-            } 
-        }
-        return document.getElementById("negacijaM").innerHTML=matrika1.toString();
+        for(var j = 0; j < m1.matrika[i].length; j++) {
+            if(je){
+                matrika1.matrika[i][j] = m1.matrika[i][j] * (-1);     
+            }else{
+                return document.getElementById("negacijaM").innerHTML="Napaka: Vsebuje string";
+            }
+        } 
     }
+        return document.getElementById("negacijaM").innerHTML=matrika1;
+    }
+add(m1,m2){
+    var nova= new Matrix4f ([[],[],[],[]]);
+    var prvaJe=this.aliJeStevilo(m1);
+    var drugaJe=this.aliJeStevilo(m2);
+    if(prvaJe && drugaJe){
+        for(var i=0; i <m1.matrika.length; i++){
+            for(var j=0; j< m1.matrika[i].length; j++){
+                 nova.matrika[i][j]= m1.matrika[i][j] + m2.matrika[i][j];
+            }
+        }
+        return document.getElementById("vsotaM").innerHTML=nova;
+    }else{
+        return document.getElementById("vsotaM").innerHTML="Napaka: Matrika vsebuje string";
+    }
+       
+}
+transpose(m){
+  var nova= new Matrix4f ([[],[],[],[]]);
+    if(this.aliJeStevilo(m)){
+        for(var i=0;i<m.matrika.length;i++){
+            for(var j=0;j<m.matrika[i].length;j++){
+                nova.matrika[j][i]=m.matrika[i][j];
+            }
+        }
+        return document.getElementById("transposeM").innerHTML=nova;
+    }else{
+        return document.getElementById("transposeM").innerHTML="Napaka: Vsebuje string";
+    }
+  
+}
+multiplyScalar(skalar,m1){
+    var nova= new Matrix4f([[],[],[],[]]);
+    
+    if(this.aliJeStevilo(m1)){
+        for(var i=0;i<m1.matrika.length;i++){
+            for(var j=0;j<m1.matrika[i].length;j++){
+                nova.matrika[i][j]=m1.matrika[i][j] * skalar;
+            }
+        }
+        return document.getElementById("multiplyScalarM").innerHTML=nova;
+    }else{
+        return document.getElementById("multiplyScalarM").innerHTML="Vsebuje string";
+    }
+    
+}
+multiply(m1,m2){
+  var nova = new Matrix4f([[],[],[],[]]);
+  var prvaJe=this.aliJeStevilo(m1);
+  var drugaJe=this.aliJeStevilo(m2);
+  if(prvaJe && drugaJe){
+      for(var i=0;i<m1.matrika.length;i++){
+          for(var j=0;j<m1.matrika[i].length;j++){
+              var pr=forumla;
+              var dr=formula;
+              var tr=formula;
+              nova.matrika[i][j]="trebadokoncat";
+          }
+      }
+      return document.getElementById("multiplyM").innerHTML=nova;
+  }  else{
+      return document.getElementById("multiplyM").innerHTML="Napaka: Vsebuje string";
+  }
+}
+aliJeStevilo(m){
+    var je;
+    for(var i =0;i<m.matrika.length;i++){
+        for(var j=0; j<m.matrika[i].length;j++){
+            if((isNaN(m.matrika[i][j]))) return je = false;
+            else je=true;
+        }
+    }
+    return je;
+}
 
 toString(){
     var rezultat="";
