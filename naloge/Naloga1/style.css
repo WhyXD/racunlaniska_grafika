@@ -1,22 +1,29 @@
+.header{  
+  padding-top: 5px;
+  color: black;  
+  text-align:  center; 
+  font-size: 18px;
+}
 .vse {
-    height: 100%;
-    width: 50%;
-    position: fixed;
-    z-index: 1;
-    top: 0;
+    height: auto;
+    width: auto;
     overflow-x: hidden;
     padding-top: 20px;
-    padding-left: 30px;
     font-size: 18px;
+    padding-left: 30px;
   }
   
   .vektorji {
-    left: 0;
     background-color: white;
-    padding-left: 30px;
+    text-align: left;   
   }
   
   .matrike {
-    right: 0;
     background-color:turquoise;
+    text-align: left; 
   }
+  .manager{
+   padding-right: 30px;
+   text-align: left;
+  }
+  

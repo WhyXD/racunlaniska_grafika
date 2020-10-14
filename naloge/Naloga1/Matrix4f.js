@@ -8,7 +8,11 @@ negacija(m1) {
     for(var i = 0; i <m1.matrika.length; i++) {
         for(var j = 0; j < m1.matrika[i].length; j++) {
             if(je){
-                matrika1.matrika[i][j] = m1.matrika[i][j] * (-1);     
+                if(m1.matrika[i][j]>0) {
+                    matrika1.matrika[i][j] = m1.matrika[i][j] * (-1);     
+                }else{
+                    matrika1.matrika[i][j] = m1.matrika[i][j];
+                }   
             }else{
                 return document.getElementById("negacijaM").innerHTML="Napaka: Vsebuje string";
             }
@@ -65,13 +69,16 @@ multiply(m1,m2){
   var nova = new Matrix4f([[],[],[],[]]);
   var prvaJe=this.aliJeStevilo(m1);
   var drugaJe=this.aliJeStevilo(m2);
+  var vsota=0;
   if(prvaJe && drugaJe){
-      for(var i=0;i<m1.matrika.length;i++){
-          for(var j=0;j<m1.matrika[i].length;j++){
-              var pr=forumla;
-              var dr=formula;
-              var tr=formula;
-              nova.matrika[i][j]="trebadokoncat";
+      for(var i=0; i<m1.matrika.length; i++){
+          for(var j=0; j<m1.matrika[i].length; j++){
+              for(var c=0; c<m1.matrika.length; c++){
+                var r = m1.matrika[i][c] * m2.matrika[c][j];
+                vsota+= r;
+              }  
+              nova.matrika[i][j]=vsota; 
+              vsota=0;  
           }
       }
       return document.getElementById("multiplyM").innerHTML=nova;
