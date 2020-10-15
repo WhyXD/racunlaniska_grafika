@@ -14,12 +14,13 @@ izvedi(){
         var rez = vrstice[i].split(" ");
         vektorji[i]=new Vector4f(rez[0],rez[1],rez[2],1)+"\n";         
     }  
-    document.getElementById("izpis").innerHTML=vektorji.join("");
-    
+    document.getElementById("izpis").innerHTML=vektorji.join("");  
 }
+
 pobrisi(){
     document.getElementById("vnosnoPolje").value=" ";
     document.getElementById("izpis").value=" ";
 }
 }
+
  PM = new PointManager();
