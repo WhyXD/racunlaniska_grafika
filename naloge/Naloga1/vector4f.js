@@ -10,17 +10,10 @@ negacija(){
        
       return document.getElementById("negacija").innerHTML=
       new Vector4f(this.aliJeVecjeOdNic(this.x),
-      this.aliJeVecjeOdNic(this.y),
-      this.aliJeVecjeOdNic(this.z),
-      this.aliJeVecjeOdNic(this.w)).toString();
+            this.aliJeVecjeOdNic(this.y),
+            this.aliJeVecjeOdNic(this.z),
+            this.aliJeVecjeOdNic(this.w));
       
-      
-     /* "["
-       +this.aliJeVecjeOdNic(this.x)+" ,"+
-       +this.aliJeVecjeOdNic(this.y)+", "+
-       +this.aliJeVecjeOdNic(this.z)+", "+
-       +this.aliJeVecjeOdNic(this.w)+"]";*/
-        
     }else{
         return document.getElementById("negacija").innerHTML="Vsebuje string";
   }
