@@ -1,7 +1,7 @@
 class PointManager{
-    constructor(){
-        
+    constructor(){    
     }
+
 branje(){
     var podatki=document.getElementById("vnosnoPolje").value;
     return podatki;
@@ -18,8 +18,8 @@ izvedi(){
 }
 
 pobrisi(){
-    document.getElementById("vnosnoPolje").value=" ";
-    document.getElementById("izpis").value=" ";
+    document.getElementById("vnosnoPolje").value="";
+    document.getElementById("izpis").value="";
 }
 }
 
