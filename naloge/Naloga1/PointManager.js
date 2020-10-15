@@ -1,5 +1,7 @@
 class PointManager{
-    constructor(){}
+    constructor(){
+        
+    }
 branje(){
     var podatki=document.getElementById("vnosnoPolje").value;
     return podatki;
@@ -14,6 +16,10 @@ izvedi(){
     }  
     document.getElementById("izpis").innerHTML=vektorji.join("");
     
+}
+pobrisi(){
+    document.getElementById("vnosnoPolje").value=" ";
+    document.getElementById("izpis").value=" ";
 }
 }
  PM = new PointManager();
