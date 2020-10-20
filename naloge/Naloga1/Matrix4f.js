@@ -86,6 +86,20 @@ multiply(m1,m2){
       return document.getElementById("multiplyM").innerHTML="Napaka: Vsebuje string";
   }
 }
+mnozenje(m1,m2){
+    var nova = new Matrix4f([[],[],[],[]]);
+    for(var i=0; i<m1.matrika.length; i++){
+        for(var j=0; j<m1.matrika[i].length; j++){
+            for(var c=0; c<m1.matrika.length; c++){
+              var r = m1.matrika[i][c] * m2.matrika[c][j];
+              vsota+= r;
+            }  
+            nova.matrika[i][j]=vsota; 
+            vsota=0;  
+        }
+    }
+    return nova;
+}
 aliJeStevilo(m){
     var je;
     for(var i =0;i<m.matrika.length;i++){
@@ -112,5 +126,5 @@ toString(){
     }   
 return rezultat;
 }
-
 }
+m = new Matrix4f([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]);

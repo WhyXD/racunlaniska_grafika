@@ -36,7 +36,8 @@ v x2 y2 z2
 v x3 y3 z3
 
 Transformation (2 točki)
-1. V JavaScriptu implementirajte razred Transformation, ki naj hrani transformacijsko matriko v privatni spremenljivki tipa Matrix4f in naj ima naslednje metode:
+1. V JavaScriptu implementirajte razred Transformation, ki naj hrani transformacijsko matriko
+ v privatni spremenljivki tipa Matrix4f in naj ima naslednje metode:
 
 translate(<Vector4f> input), ki naj prejme kot parameter primerek razreda Vector4f in ustrezno spremeni shranjeno matirko,
 scale(<Vector4f> input), ki naj prejme kot parameter primerek razreda Vector4f in ustrezno spremeni shranjeno matriko,
@@ -44,7 +45,9 @@ rotateX(<float> input), ki sprejme en parameter s katerim spremenimo transformac
 rotateY(<float> input), ki sprejme en parameter s katerim spremenimo transformacijsko matriko za vrtenje okoli osi y,
 rotateZ(<float> input), ki sprejme en parameter s katerim spremenimo transformacijsko matriko za vrtenje okoli osi z,
 transformPoint(<Vector4f> input), ki naj prejme točko v obliki Vector4f in vrne transformirano točko v enaki obliki.
-2. V JavaScriptu implementirajte razred TransformPoints, ki demonstrira uporabo vseh zgornjih razredov. Razred naj prebere točke iz vhodnega vnosnega polja, jih transformira v skladu s spodnjimi navodili in transformirane točke zapiše v predvideno izhodno vnosno polje HTML dokumenta.
+2. V JavaScriptu implementirajte razred TransformPoints, ki demonstrira uporabo vseh zgornjih razredov. 
+Razred naj prebere točke iz vhodnega vnosnega polja, jih transformira v skladu s spodnjimi
+ navodili in transformirane točke zapiše v predvideno izhodno vnosno polje HTML dokumenta.
 
 Navodila za transformiranje točk:
 
