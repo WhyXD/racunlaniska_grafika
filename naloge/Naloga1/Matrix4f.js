@@ -21,16 +21,16 @@ negacija(m1) {
         return document.getElementById("negacijaM").innerHTML=matrika1;
     }
 add(m1,m2){
-    var nova= new Matrix4f ([[],[],[],[]]);
-    var prvaJe=this.aliJeStevilo(m1);
-    var drugaJe=this.aliJeStevilo(m2);
+    var nova = new Matrix4f ([[],[],[],[]]);
+    var prvaJe = this.aliJeStevilo(m1);
+    var drugaJe = this.aliJeStevilo(m2);
     if(prvaJe && drugaJe){
-        for(var i=0; i <m1.matrika.length; i++){
-            for(var j=0; j< m1.matrika[i].length; j++){
+        for(var i = 0; i <m1.matrika.length; i++){
+            for(var j = 0; j< m1.matrika[i].length; j++){
                  nova.matrika[i][j]= m1.matrika[i][j] + m2.matrika[i][j];
             }
         }
-        return document.getElementById("vsotaM").innerHTML=nova;
+        return document.getElementById("vsotaM").innerHTML= nova;
     }else{
         return document.getElementById("vsotaM").innerHTML="Napaka: Matrika vsebuje string";
     }
@@ -39,12 +39,12 @@ add(m1,m2){
 transpose(m){
   var nova= new Matrix4f ([[],[],[],[]]);
     if(this.aliJeStevilo(m)){
-        for(var i=0;i<m.matrika.length;i++){
-            for(var j=0;j<m.matrika[i].length;j++){
+        for(var i = 0; i<m.matrika.length; i++){
+            for(var j = 0; j<m.matrika[i].length; j++){
                 nova.matrika[j][i]=m.matrika[i][j];
             }
         }
-        return document.getElementById("transposeM").innerHTML=nova;
+        return document.getElementById("transposeM").innerHTML= nova;
     }else{
         return document.getElementById("transposeM").innerHTML="Napaka: Vsebuje string";
     }
@@ -54,12 +54,12 @@ multiplyScalar(skalar,m1){
     var nova= new Matrix4f([[],[],[],[]]);
     
     if(this.aliJeStevilo(m1)){
-        for(var i=0;i<m1.matrika.length;i++){
-            for(var j=0;j<m1.matrika[i].length;j++){
-                nova.matrika[i][j]=m1.matrika[i][j] * skalar;
+        for(var i = 0; i<m1.matrika.length; i++){
+            for(var j = 0; j<m1.matrika[i].length; j++){
+                nova.matrika[i][j]= m1.matrika[i][j] * skalar;
             }
         }
-        return document.getElementById("multiplyScalarM").innerHTML=nova;
+        return document.getElementById("multiplyScalarM").innerHTML= nova;
     }else{
         return document.getElementById("multiplyScalarM").innerHTML="Vsebuje string";
     }
@@ -127,4 +127,4 @@ toString(){
 return rezultat;
 }
 }
-//m = new Matrix4f([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]);
+m = new Matrix4f([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]);

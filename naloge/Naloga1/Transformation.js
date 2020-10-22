@@ -18,9 +18,7 @@ translate(vektor){
     }*/   
     var matrika_z_vektorjem = new Matrix4f([[1,0,0,x],[0,1,0,y],[0,0,1,z],[0,0,0,1]]);
 
-    var m = this.tra_matrika.multiply(matrika_z_vektorjem, this.tra_matrika);
-    
-    return document.getElementById("translacijaT").innerHTML = m; 
+    return document.getElementById("translacijaT").innerHTML =  this.tra_matrika.multiply(matrika_z_vektorjem, this.tra_matrika); 
 }
 scale(vektor){
     var w = vektor.w;
@@ -36,45 +34,41 @@ scale(vektor){
     }*/    
     var matrika_z_vektorjem = new Matrix4f([[x,0,0,0],[0,y,0,0],[0,0,z,0],[0,0,0,1]]);
 
-    var m = this.tra_matrika.multiply(matrika_z_vektorjem, this.tra_matrika);
-
-    return document.getElementById("skalacijaT").innerHTML = m; 
+    return document.getElementById("skalacijaT").innerHTML =this.tra_matrika.multiply(matrika_z_vektorjem, this.tra_matrika);; 
 }
-rotateX(kot_v_stopinja){
-    var x = kot_v_stopinja * ( Math.PI / 180);
-
+rotateX(kot){
+   // var x = kot_v_stopinja * ( Math.PI / 180);
+    var x=kota;
     var rx = new Matrix4f([[1, 0, 0, 0],
-                           [0, Math.cos(x), - Math.sin(x), 0],
+                           [0, Math.cos(x),  -Math.sin(x), 0],
                            [0, Math.sin(x),   Math.cos(x), 0],
                            [0, 0, 0, 1]]);
 
-    var m = this.tra_matrika.multiply(rx, this.tra_matrika);
+    this.tra_matrika = this.tra_matrika.multiply(rx, this.tra_matrika);
 
-    return document.getElementById("rotacijaX").innerHTML = m;
+    return document.getElementById("rotacijaX").innerHTML = this.tra_matrika;
 }
-rotateY(kot_v_stopinja){
-    var x = kot_v_stopinja * (Math.PI / 180);
-    var ry = new Matrix4f([[  Math.cos(x), 0, Math.sin(x), 0],
+rotateY(kot){
+   // var x = kot_v_stopinja * (Math.PI / 180);
+    var x=kot;
+    var ry = new Matrix4f([[ Math.cos(x), 0, Math.sin(x), 0],
                            [0, 1, 0, 0],
-                           [- Math.sin(x), 0, Math.cos(x), 0],
+                           [ -Math.sin(x), 0, Math.cos(x), 0],
                            [0, 0, 0, 1]]);
 
-    var m = this.tra_matrika.multiply(ry, this.tra_matrika);
-
-    return document.getElementById("rotacijaY").innerHTML=m;
+    return document.getElementById("rotacijaY").innerHTML=this.tra_matrika.multiply(ry, this.tra_matrika);
 }
-rotateZ(kot_v_stopinja){
-    var x = kot_v_stopinja * (Math.PI / 180);
-    
-    var rz = new Matrix4f([[Math.cos(x), - Math.sin(x), 0, 0],
+rotateZ(kot){
+    //var x = kot_v_stopinja * (Math.PI / 180);
+    var x=kot;
+    var rz = new Matrix4f([[Math.cos(x),  -Math.sin(x), 0, 0],
                            [Math.sin(x),   Math.cos(x), 0, 0],
                            [0, 0, 1, 0],
                            [0, 0, 0, 1]]);
 
-    var m = this.tra_matrika.multiply(rz, this.tra_matrika);
     //this.tra_matrika= -->
 
-    return document.getElementById("rotacijaZ").innerHTML = m;
+    return document.getElementById("rotacijaZ").innerHTML = this.tra_matrika.multiply(rz, this.tra_matrika);;
     // in vrnes = this.tra_matrika
 }
 
@@ -84,22 +78,22 @@ transformPoint(tocka){
     var x = tocka.x;
     var y = tocka.y;
     var z = tocka.z;
-    var spr = [x, y, z]; 
-    var rez = [3];
+    var w = tocka.w;
+    var spr = [x, y, z ,w]; 
+    var rez = [4];
     //this.tra_matrika.matrika[i].length
     for(var i = 0;i < m.matrika.length; i++){
         var vsota = 0;
         for(var j = 0; j < m.matrika[i].length; j++){
-            vsota += m.matrika[i][j] * spr[i];
+            vsota += m.matrika[i][j] * spr[j];
             //this.tra_matrika.matrika[i][j]   
         }
         rez[i] = vsota;
     }
-    var nov = new Vector4f(rez[0], rez[1], rez[2], 1);
-
-    this.prikaziMatriko(m);
+    var nov = new Vector4f(rez[0], rez[1], rez[2], rez[3]);
 
     return document.getElementById("transformPoint").innerHTML = nov.toString();
+    
    // document.getElementById("tra").innerHTML=this.tra_matrika; 
 }
 moje(){
@@ -123,10 +117,10 @@ moje(){
     
     transformacija = new Transformation();
     transformacija.scale(new Vector4f(1.12,1.12,1,0));
-    m.tra_matrika=transformacija.scale(new Vector4f(1.12,1.12,1,0));
+    m.tra_matrika=transformacija.scale(new Vector4f(1.12,1.12,1,1));
 
     transformacija = new Transformation();
-    transformacija.rotateY(5*(Math.PI/8));
+    transformacija.rotateY(5*Math.PI/8);
     m.tra_matrika=transformacija.rotateY(5*(Math.PI/8));
 
     return m.tra_matrika;
@@ -138,9 +132,7 @@ prikaziMatriko(m){
         for(var j=0;j<m.matrika[i].length;j++){
             vrstica+=m.matrika[i][j];
         }
-        console.log(vrstica);
+        document.getElementById("tra").innerHTML=vrstica+"\n";
     }
 }  
 }
-
- 

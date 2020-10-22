@@ -50,20 +50,21 @@ crossProduct(v1,v2){
     return document.getElementById("crossProduct").innerHTML=new Vector4f(a ,-b ,+c ,0 );
 }
 normalize(v1){
-    var ce=v1.include('0');
-    //if((!v1.x == 0) || (!v1.y == 0) || (!v1.z == 0)){
-      if(!ce){
+    var jx=this.je(v1.x);
+    var jy=this.je(v1.y);
+    var jz=this.je(v1.z);
+    if(jx && jy && jz){
         let normalizacija = Math.sqrt(( v1.x * v1.x ) + ( v1.y * v1.y ) + ( v1.z * v1.z ));
         let novx = v1.x / Math.abs( normalizacija );
         let novy = v1.y / Math.abs( normalizacija );
         let novz = v1.z / Math.abs( normalizacija );
-        return  document.getElementById("normalize").innerHTML=new Vector4f(novx,novy,novz,0);
+        return  document.getElementById("normalize").innerHTML= new Vector4f(novx,novy,novz,0);
     }else{
         alert("Deljenje z 0 ni mogoče");
     }
 }
 project(v1,v2){
-    const dot= this.dotProduct( v1, v2);
+    const dot = this.dotProduct( v1, v2);
     var magnituda = Math.abs(Math.sqrt((Math.pow( v2.x, 2)) + Math.pow( v2.y, 2) + Math.pow( v2.z, 2)));
     var projekcija = dot / (Math.pow( magnituda),2);
         return document.getElementById("procject").innerHTML= new Vector4f( v2.x / projekcija, v2.y / projekcija, v2.z / projekcija,0);
@@ -108,6 +109,10 @@ toString(){
     +this.z+", "+
     +this.w+"]";
 } 
+je(x){
+    if(x!=0) return true;
+    else return false;
 }
-//tocka = new Vector4f(1,2,3,1);
-//vektor = new Vector4f(1,2,3,1);
+}
+tocka = new Vector4f(1,2,3,1);
+vektor = new Vector4f(1,2,3,1);
