@@ -1,0 +1,15 @@
+Poženete html dokument in v vnosno polje vpišete točko npr (1 2 3 1), obvezno mora vsebovati vse štiri 
+elemente. Ko ste vnesli podatke, lahko nad to točko izvede transformacijo z pritiskom na 
+gumb "Transformiraj točko". Izpisale se vam bojo podatki o točki, rotacija, skalacija, in na koncu je tudi
+rezultat transformirane točke.
+
+Če želite testirati delovanje razredov vektor4f in matrix4f, to storite tako da stisnete desni klik na miški
+in preglej, nato odprete konzolo in začnete pisat kodo. Po prevzetju sta ustvarjena primerka za oba razreda
+(matrika in vektor).Za razred vektor imate ustvarjena dva primerka:
+tocko "tocka = new Vector4f(1,2,3,1);" in 
+vektor "vektor = new Vector4f(1,2,3,0);"
+Za izvanje metod nad njima vpišete "vektor.normalize(vektor)" in izpisal se Vam bo 
+rezultat v html-ju, to lahko storite za vse metode v razredu.
+
+Tako lahko testirate tudi delovanje za razred matrike. Prevzejtu imate ustvarjen primerek razreda z imenom
+"m = new Matrix4f([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]);" in njenimi vrednostmi.

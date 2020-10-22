@@ -115,4 +115,4 @@ je(x){
 }
 }
 tocka = new Vector4f(1,2,3,1);
-vektor = new Vector4f(1,2,3,1);
+vektor = new Vector4f(1,2,3,0);
