@@ -12,7 +12,7 @@ izvedi(){
     var vektor;
     for(var i = 0; i<vrstice.length;i++){
         var rez = vrstice[i].split(" ");
-        vektor = new Vector4f(rez[0], rez[1], rez[2],0); 
+        vektor = new Vector4f(rez[0], rez[1], rez[2], rez[3]); 
     }  
     document.getElementById("izpis").innerHTML = vektor; 
 
