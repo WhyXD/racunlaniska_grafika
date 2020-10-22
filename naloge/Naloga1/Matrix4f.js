@@ -81,10 +81,10 @@ multiply(m1,m2){
               vsota=0;  
           }
       }
-      return document.getElementById("multiplyM").innerHTML=nova;
-  }  else{
-      return document.getElementById("multiplyM").innerHTML="Napaka: Vsebuje string";
-  }
+      return document.getElementById("multiplyM").innerHTML = nova;
+  } // else{
+     // return document.getElementById("multiplyM").innerHTML = "Napaka: Vsebuje string";
+ // }
 }
 mnozenje(m1,m2){
     var nova = new Matrix4f([[],[],[],[]]);
@@ -127,4 +127,4 @@ toString(){
 return rezultat;
 }
 }
-m = new Matrix4f([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]);
+//m = new Matrix4f([[1,2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15,16]]);

@@ -34,7 +34,7 @@ scalarProduct(faktor,vektor){
 }
 dotProduct(v1,v2){
     var a = (v1.x * v2.x);
-    var b = (v1.y * v2.y) 
+    var b = (v1.y * v2.y);
     var c = (v1.z * v2.z);
     var d = a + b + c;
     return document.getElementById("dotProduct").innerHTML = d;
@@ -50,11 +50,17 @@ crossProduct(v1,v2){
     return document.getElementById("crossProduct").innerHTML=new Vector4f(a ,-b ,+c ,0 );
 }
 normalize(v1){
-    let normalizacija = Math.sqrt(( v1.x * v1.x ) + ( v1.y * v1.y ) + ( v1.z * v1.z ));
-    let novx = v1.x / Math.abs( normalizacija );
-    let novy = v1.y / Math.abs( normalizacija );
-    let novz = v1.z / Math.abs( normalizacija );
-    return  document.getElementById("normalize").innerHTML=new Vector4f(novx,novy,novz,0);
+    var ce=v1.include('0');
+    //if((!v1.x == 0) || (!v1.y == 0) || (!v1.z == 0)){
+      if(!ce){
+        let normalizacija = Math.sqrt(( v1.x * v1.x ) + ( v1.y * v1.y ) + ( v1.z * v1.z ));
+        let novx = v1.x / Math.abs( normalizacija );
+        let novy = v1.y / Math.abs( normalizacija );
+        let novz = v1.z / Math.abs( normalizacija );
+        return  document.getElementById("normalize").innerHTML=new Vector4f(novx,novy,novz,0);
+    }else{
+        alert("Deljenje z 0 ni mogoče");
+    }
 }
 project(v1,v2){
     const dot= this.dotProduct( v1, v2);
@@ -95,7 +101,7 @@ aliJeVecjeOdNic(x){
     else
         return x;
 }
-toString(x,y,z,w){
+toString(){
     return "["+
     +this.x+", "+
     +this.y+", "+
@@ -103,5 +109,5 @@ toString(x,y,z,w){
     +this.w+"]";
 } 
 }
-tocka = new Vector4f(1,2,3,1);
-vektor = new Vector4f(1,2,3,0);
+//tocka = new Vector4f(1,2,3,1);
+//vektor = new Vector4f(1,2,3,1);
