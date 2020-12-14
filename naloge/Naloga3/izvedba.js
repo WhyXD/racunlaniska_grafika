@@ -49,10 +49,19 @@ class Izvedba{
         ctx.closePath();
     }
     static pocisti(){
-        ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);  
-        Drevo.redraw();
+        ctx.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);     
     }
+    static animacija(i){
+       // ctx.clearRect(0,0, canvas.clientWidth,canvas.clientHeight);
+        let s = sd.seznam();
+        ctx.beginPath();
+        ctx.arc(s[i].x, s[i].y , 5 , 0 , Math.PI*2, false);
+        ctx.fillStyle = "red";
+        ctx.fill();  
+    }
+     
 }
+  
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 let mreza = document.getElementById("mreza").checked;
@@ -65,6 +74,14 @@ let meja = new Pravokotnik(0,0,canvas.clientWidth,canvas.clientHeight);
 let sd = new Drevo(meja,10); 
 let iz = new Izvedba(canvas,ctx,meja);
 let md = false;
+for(let i = 0;i<10;i++){
+    let x = (Math.random() * canvas.clientWidth);
+    let y = (Math.random() * canvas.clientHeight);
+    let t = new Tocka(x,y);
+    sd.vstavi(t);
+    
+}
+sd.posodobi();
 canvas.addEventListener("mousedown",()=>{
     md =true;
         canvas.addEventListener("mousemove", (ev)=>{
@@ -100,7 +117,9 @@ canvas.addEventListener("mousedown",()=>{
 });
 canvas.addEventListener("mouseup",()=>{
     md = false;
+   
 });
+
 
 //https://www.youtube.com/watch?v=OJxEcs0w_kE
 //https://www.youtube.com/watch?v=z0YFFg_nBjw
