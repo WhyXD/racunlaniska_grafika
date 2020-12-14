@@ -1,0 +1,8 @@
+Program naj vsebuje naslednje stvari:
+
+-žogice naj se gibajo v omejenem kvadratu, kjer se od sten odbijajo,
+- ko detektiramo trk med žogicami naj se le-te obarvajo (realizacija odboja ni potrebna),
+- uporabnik naj ima možnost vklopa izrisa razdelilne mreže prostora,
+- uporabnik naj ima možnost določiti število žogic,
+- program naj bo raliziran z uporabo jezika JavaScript in HTML 2D platna,
+https://www.youtube.com/watch?v=TJzq_kjtGTc
