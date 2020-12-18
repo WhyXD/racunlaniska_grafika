@@ -12,15 +12,17 @@
 </head>
 <body style="padding-left: 25px;">
     <h1>Naloga 3, štiriško drevo</h1>
-<canvas id="canvas" width="900px" height="750px" ></canvas> 
+<canvas id="canvas" width="1800px" height="650px" ></canvas> 
 <br>
-<form onsubmit="Izvedba.t()">
-  Izris mreže <input type="checkbox" id="mreza" checked >
+<form>
+  Izris mreže <input type="checkbox" id="mreza" onclick ="klik()" >
   <br>
   Vpisi stevilo tock: <input type = "text" = id ="stevilo_tock" size="2">
-  <br><br>
-  <input type="submit" value="Potrdi">
+  <br>
 </form>
+  <p>Stevilo tock :    <p id="tocke"><p>
+  <p>Stevilo trcenj :  <p id="trcenj"></p>
+</body>
 <script src="pravokotnik.js"></script> 
 <script src="tocka.js"></script> 
 <script src="drevo.js"></script> 

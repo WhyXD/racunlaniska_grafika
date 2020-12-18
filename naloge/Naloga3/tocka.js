@@ -1,16 +1,22 @@
 class Tocka{
-    constructor(x,y){
+    static size=0;
+     constructor(x,y){
         this.x = x;
         this.y = y;
-        this.dx = (Math.random() * 3) + 1;
+        this.dx = (Math.random() * 2) + 1;
         this.dx *= Math.floor(Math.random() * 2) == 1 ? 1 : -1;
-        this.dy = (Math.random() * 3) + 1;
+        this.dy = (Math.random() * 2) + 1;
         this.dy *= Math.floor(Math.random() * 2) == 1 ? 1 : -1;
-        this.r = (Math.random() * 6) + 1;
+        this.r = 8;
+        this.trk = false;
+      Tocka.size++;
     }
-    static po(){
+     po(){
         this.x += this.dx;
         this.y += this.dy;
+    }
+    static size(){
+        return Tocka.size;
     }
     
 }
