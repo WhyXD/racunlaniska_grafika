@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pobiralec | Marko Gustincic</title>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="../../common/style.css">
+    <script type="text/javascript" src="../../lib/gl-matrix-min.js"></script>
+    <script type="text/javascript" src="../../lib/dat.gui.min.js"></script>
+    <script type="text/javascript" src="../../lib/oimo.js"></script>
+    <script type="module" src="Game.js"></script>
+    <script>
+   var myVar;
+
+    function myFunction() {
+        setTimeout(showPage,2000);
+    }
+    function showPage() {
+    document.getElementById("navodila").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
+    }
+    </script>
+    
+</head>
+<!--onClick="myFunction()" style="margin:0;" levo prekopiras u body-->
+<body onClick="myFunction()" style="margin:0;" >
+<div id="navodila">
+<h1> Igra Pobiralec je prvosebna igra. Namen igre je zbrati vse možne kovance. Pri tem pa morate paziti da ne padete v "črno luknjo", v nasprotnem primeru je igre konec. 
+<p>Premikanje : Kombinacije tipk W,A,S,D
+<p>Zbiranje žetonov: tipka Space (morate se dovolj približati željenemu kovancu, in nato pritisnete Space)
+<p>Igro požene z klikom na stran. (Če kliknete krog imate večje šanse za zmago )
+<p style="font-size:80px">&#128512;</p>
+<div id ="loader"></div>
+</div>
+<div style = "display:none;" id ="myDiv" class="animate-bottom">
+    <div class="overlay">
+       
+        <a class="back" onClick="location.reload()">Refresh</a>
+        <a class="back" id ="zacni" >Zacni igro</a>
+        <p>Mozne tocke
+        <p id ="p">
+        <p>Dosezene Tocke
+        <p id = "dosezene">
+        <p id = "timer">
+    </div>
+    <div class="fullscreen">
+        <canvas style="background: url('../../common/images/29.jpg')"></canvas>
+    </div>
+    </div>
+       
+</body>
+
+  
+</html>
